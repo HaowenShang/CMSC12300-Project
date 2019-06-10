@@ -51,8 +51,8 @@ This is a repository for CMSC 12300 project. Our project goal is to construct a 
 4. Make accurate movie recommendations!
 ## Dataset
 27,753,444 ratings from 283,228 users on 58,098 movies from MovieLens ml-lastest-small dataset. Below is the rating distribution:
-![alt text]( )
-<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/data.png" alt="drawing" width="400" height="300" style="float: right;"/>
+
+<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/data.png" alt="drawing" width="400" height="300" style="float: center;"/>
 ## Algorithms
 Item-based: 3-step MapReduce
 ![alt text](https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/item.png "Logo Title Text 1")
