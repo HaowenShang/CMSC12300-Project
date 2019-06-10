@@ -1,3 +1,4 @@
+<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/user.png" alt="drawing" width="200"/>
 # Item-based and User-based Movie Recommendation using Hadoop MapReduce
 This is a repository for CMSC 12300 project. Our project goal is to construct a recommendation system which predicts the rating that the user would give to a movie. We use both item-based algorithm and user-based algorithm for recommendation.
 
