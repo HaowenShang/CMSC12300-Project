@@ -60,7 +60,7 @@ Advisor: Dr. Matthew Wachs
 <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/data.png" alt="drawing" width="400" height="300" style="float: right"/>
 
 ## Algorithms
-Item-based: 3-step MapReduce
+### Item-based: 3-step MapReduce
 
 <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/item.png" alt="drawing" width="400" height="300" style="float: right;"/>
 
@@ -76,7 +76,7 @@ Item-based: 3-step MapReduce
 
 <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/i3.png" alt="drawing" width="400" height="300" style="float: right;"/>
 
-User-based: 4-step MapReduce
+### User-based: 4-step MapReduce
 
 <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/user.png" alt="drawing" width="400" height="300" style="float: right;"/>
 
