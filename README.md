@@ -3,6 +3,7 @@ This is a repository for CMSC 12300 project. Our project goal is to construct a 
 
 ## Group Members
 Team members: Boyang Qu, Ruixi Li, Tianxin Zheng, Haowen Shang
+
 Advisor: Dr. Matthew Wachs
 
 ## Files in the code and data folder
