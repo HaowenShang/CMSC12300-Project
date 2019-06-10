@@ -1,6 +1,10 @@
 # Item-based and User-based Movie Recommendation using Hadoop MapReduce
 This is a repository for CMSC 12300 project. Our project goal is to construct a recommendation system which predicts the rating that the user would give to a movie. We use both item-based algorithm and user-based algorithm for recommendation.
 
+## Group Members
+Team members: Boyang Qu, Ruixi Li, Tianxin Zheng, Haowen Shang
+Advisor: Dr. Matthew Wachs
+
 ## Files in the code and data folder
 ### code:
 
@@ -52,7 +56,7 @@ This is a repository for CMSC 12300 project. Our project goal is to construct a 
 ## Dataset
 27,753,444 ratings from 283,228 users on 58,098 movies from MovieLens ml-lastest-small dataset. Below is the rating distribution:
 
-<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/data.png" alt="drawing" width="400" height="300" style="float: right;"/>
+<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/data.png" alt="drawing" width="400" height="300" style="float: right"/>
 
 ## Algorithms
 Item-based: 3-step MapReduce
@@ -96,10 +100,21 @@ User-based: 4-step MapReduce
 
 ## Results
 
+### Cross-Validation
+In order to assess the accuracy of our model, we performed cross-validation of both item-based (movie-based) and user-based models. More specifically, a train/test split was done, and then the root mean square error (RMSE) was calculated for the predicted ratings and actual ratings. 
+
+If we want to recommend movies to a user, then we must learn something about past movie ratings by the user. Therefore, a small portion of users was selected as the testing users and a small portion of the movie rated by these users was finally selected as the testing movies in the testing dataset. 1/10 of the users were selected randomly as the testing users, and then ¼ of the movies watched by these users were again selected randomly into the testing dataset. Movie ratings by the remaining users and movie ratings by the testing users on the remaining movies were used as the training dataset. 
+
+After running the two algorithms on their respective training dataset, both item-based approach and user-based approach yielded predicted testing movie ratings by the testing users. Then for each approach, we calculated the root mean square error to measure the model accuracy.  The root mean square error is shown below in Table 1. The RMSE values suggest that with a large dataset, the error is relatively stable at less than 0.5 stars on a 5 star rating-scale. We decided that both the item-based model and the user-based model were effective in making accurate movie recommendation for users, and the item-based model was slightly better with lower RMSE values in predicted ratings. 
+
 <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/res.png" alt="drawing" width="600" height="300" style="float: right"/>
 
+### Make Recommendation
+Both item-based and user-based approach yielded predicted ratings for unwatched movies by the user. Furthermore, we validated that the predicted ratings from both approaches were relatively accurate. Thus, we could conveniently recommend to a user the movies with the highest expected ratings from him/her. In conclusion, our models were able to generate accurate recommendations to users based on either movie similarities or user behaviors. 
 
 
+## Acknowledgement
+Thanks for Dr. Matthew Waches for his helpful comments and suggestions.
 
 
 
