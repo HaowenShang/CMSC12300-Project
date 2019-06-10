@@ -1,4 +1,3 @@
-<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/user.png" alt="drawing" width="200"/>
 # Item-based and User-based Movie Recommendation using Hadoop MapReduce
 This is a repository for CMSC 12300 project. Our project goal is to construct a recommendation system which predicts the rating that the user would give to a movie. We use both item-based algorithm and user-based algorithm for recommendation.
 
@@ -16,11 +15,17 @@ This is a repository for CMSC 12300 project. Our project goal is to construct a 
 
 ## How to run our algorithm?
  + For testing accuracy purpose, we need to first split the dataset, then run our item_based/user_based algorithm and finally test the prediction accuracy.
+ 
     step 1: Run `$ python3 split_dataset.py ratings.csv` to split the dataset.
+    
     step 2: For user_based approach, run `$ python3 user_based_recommend_mapreduce.py <training_ratings.csv> user_10nearestneighbor.csv` and then`$ python3 user_based_recommend_predict.py training_ratings.csv user_10nearestneighbor.csv user_movie_prediction.csv`; for item_based approach, run `python3 item_based.py <training_ratings.csv> output_item_based.csv`.
+    
     step 3: For user_based approach: run `$ python3 test_accuracy.py out_training.csv user`; for item_based approach: `$ python3 test_accuracy.py out_training.csv item`.
+    
 + For making recommendation purpose, we need to run our item_based/user_based algorithm and then the making recommendation algorithm.
-  step 1: For user_based approach, run `$ python3 user_based_recommend_mapreduce.py <training_ratings.csv> user_10nearestneighbor.csv` and then`$ python3 user_based_recommend_predict.py training_ratings.csv user_10nearestneighbor.csv user_movie_prediction.csv`; for item_based approach, run `python3 item_based.py <training_ratings.csv> output_item_based.csv`
+
+  step 1: For user_based approach, run `$ python3 user_based_recommend_mapreduce.py <training_ratings.csv> user_10nearestneighbor.csv` and then`$ python3 user_based_recommend_predict.py training_ratings.csv user_10nearestneighbor.csv user_movie_prediction.csv`; for item_based approach, run `python3 item_based.py <training_ratings.csv> output_item_based.csv`.
+  
   step 2: Run `$ python3 recommend_movies.py output.csv` to make recommendations.
 
 
@@ -37,8 +42,8 @@ This is a repository for CMSC 12300 project. Our project goal is to construct a 
 4. Make accurate movie recommendations!
 ## Dataset
 27,753,444 ratings from 283,228 users on 58,098 movies from MovieLens ml-lastest-small dataset. Below is the rating distribution:
-![alt text](https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/data.png )
-
+![alt text]( )
+<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/data.png" alt="drawing" width="400" height="300" style="float: right/>
 ## Algorithms
 Item-based: 3-step MapReduce
 ![alt text](https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/item.png "Logo Title Text 1")
