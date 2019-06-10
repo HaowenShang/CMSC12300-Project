@@ -3,14 +3,23 @@ This is a repository for CMSC 12300 project. Our project goal is to construct a 
 
 ## Files in the code and data folder
 ### code:
+
 `item_based.py`: Item-based MapReduce algorithm.
+
 `user_based_recommend_mapreduce.py`: User-based MapReuduce algorithm.
+
 `user_based_recommend_predict.py`: Make predictions for all the users in user-based algorithm.
+
 `split_dataset.py` : Split the dataset to training and testing dataset for user-based or item-based approach according to command-line argument.
+
 `test_accuracy.py`: Test recommendation accuracy for user-based or item-based approach according to command-line argument.
+
 `recommend_movies.py`: Movie Recommendation for an entered user.
+
 ### data: 
+
 `ratings.csv`: dataset containing user_id, movie_id and rating score.
+
 `movies.csv`: dataset matching movie_id and title.
 
 ## How to run our algorithm?
@@ -43,7 +52,7 @@ This is a repository for CMSC 12300 project. Our project goal is to construct a 
 ## Dataset
 27,753,444 ratings from 283,228 users on 58,098 movies from MovieLens ml-lastest-small dataset. Below is the rating distribution:
 ![alt text]( )
-<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/data.png" alt="drawing" width="400" height="300" style="float: right/>
+<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/data.png" alt="drawing" width="400" height="300" style="float: right;"/>
 ## Algorithms
 Item-based: 3-step MapReduce
 ![alt text](https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/item.png "Logo Title Text 1")
