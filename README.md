@@ -53,9 +53,12 @@ This is a repository for CMSC 12300 project. Our project goal is to construct a 
 27,753,444 ratings from 283,228 users on 58,098 movies from MovieLens ml-lastest-small dataset. Below is the rating distribution:
 
 <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/data.png" alt="drawing" width="400" height="300" style="float: right;"/>
+
 ## Algorithms
 Item-based: 3-step MapReduce
+
 <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/item.png" alt="drawing" width="400" height="300" style="float: right;"/>
+
 * Firstly, we want to find all movies and their ratings watched by each person. We will use a mapper to extract user and (movie, rating) pair and use a reducer to group all (movie, rating) pair by user.
 
 <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/i1.png" alt="drawing" width="400" height="300" style="float: right;"/>
@@ -69,24 +72,31 @@ Item-based: 3-step MapReduce
 <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/i3.png" alt="drawing" width="400" height="300" style="float: right;"/>
 
 User-based: 4-step MapReduce
+
 <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/user.png" alt="drawing" width="400" height="300" style="float: right;"/>
+
 * First, to find all movies and users who watched the movie and rated it, we used a mapper to extract movie and (user, rating) pair and a reducer to group all (user, rating) pairs by the movie (Figure 2a).
 
 <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/u1.png" alt="drawing" width="400" height="300" style="float: right;"/>
 * Second, to get every pair of users who watched the same movie and the corresponding rating pairs, we employed a mapper to get key-value pair, which looked like: (user1, user2) - (rating1, rating2).  Then, we used a reducer to compute the rating-based similarity between each user pair and got its similarity scores (Figure 2b). 
+
 <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/u2.png" alt="drawing" width="400" height="300" style="float: right;"/>
+
 * Third, to measure the similarities between each user pair, we used a reducer to compute the rating-based similarity between each user pair and got its similarity scores (Figure 2c). The yielded output was in the format of: user1, user2, similarity scores, (number of movies they both watched).
-<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/u3.png" alt="drawing" width="400" height="300" style="float: right;"/>
+
+<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/u3.png" alt="drawing" width="400" height="200" style="float: right;"/>
+
 * The final step was to map the users and generate a list of similar users sorted by similarity scores (Figure 2d). The output obtained from the mapreduce steps in the user-based algorithm is in the format of: "user1" [ ("user2", "similarity (From 0 to 1)"), ("user3", "similarity (From 0 to 1)")]. 
-<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/u4.png" alt="drawing" width="400" height="300" style="float: right;"/>
+
+<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/u4.png" alt="drawing" width="400" height="150" style="float: right;"/>
  
 * Prediction: After completing the MapReduce task, we made a prediction for each movie for each user by calculating a simple weighted average of the ratings provided by the k most similar users. Specifically, we only included similar users who rated this movie. We used the following formula, where Wi,1 is the similarity of user i with the k ( we will choose 10 here)  most similar users. We applied this prediction algorithm to all unrated movies by each user.
 
-    <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/pre.jpg" alt="drawing" width="200" height="50" style="float: right;"/>
+    <img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/pre.jpg" alt="drawing" width="250" height="50" style="float: right;"/>
 
 ## Results
 
-<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/res.png" alt="drawing" width="400" height="300" style="float: right;"/>
+<img src="https://raw.githubusercontent.com/TianxinZheng/CMSC12300-project/master/images/res.png" alt="drawing" width="600" height="300" style="float: right"/>
 
 
 
